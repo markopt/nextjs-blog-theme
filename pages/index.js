@@ -20,6 +20,17 @@ export default function Index({ posts, globalData }) {
               z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
       })('d428f774-8b69-41dd-5bd1-6069e6a0fb03');
       </script>
+      pendo.initialize({
+        visitor: {
+            id:              '4974973239'   // Required if user is logged in, default creates anonymous ID
+            // email:        // Recommended if using Pendo Feedback, or NPS Email
+            // full_name:    // Recommended if using Pendo Feedback
+            // role:         // Optional
+
+            // You can add any additional visitor level key-values here,
+            // as long as it's not one of the above reserved names.
+        }
+      });
       <SEO title={globalData.name} description={globalData.blogTitle} />
       <Header name={globalData.name} />
       <main className="w-full">
