@@ -1,0 +1,3 @@
+[submodule "node-detective"]
+	path = node-detective
+	url = https://github.com/defunctzombie/node-detective.git
