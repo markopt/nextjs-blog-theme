@@ -5,7 +5,7 @@ import 'prismjs/themes/prism-tomorrow.css';
 function MyApp({ Component, pageProps }) {
   return (
     <>
-    	<Script
+    	<Script id="my-script"
 	    	dangerouslySetInnerHTML={{
 			    __html: `
 				    (function(apiKey){
