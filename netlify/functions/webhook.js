@@ -2,7 +2,7 @@
 const handler = async (event) => {
   try {
     console.log(event.body)
-    const payload = JSON.parse(event)
+    const payload = JSON.parse(event.body)
     // statusCode: 200,
     const endpoint = 'https://events.split.io/api/events';
     const url = new URL(endpoint);
