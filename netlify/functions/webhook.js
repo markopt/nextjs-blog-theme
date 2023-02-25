@@ -2,18 +2,19 @@
 const handler = async (event) => {
   try {
     console.log(event.body)
+    const payload = JSON.parse(event)
     // statusCode: 200,
     const endpoint = 'https://events.split.io/api/events';
     const url = new URL(endpoint);
-    url.searchParams.set('ts', event.body.timestamp);
+    url.searchParams.set('ts', payload.body.timestamp);
     const splitEvent = {
-      eventTypeId: event.body.accountId,
+      eventTypeId: payload.body.accountId,
       environmentName: 'Prod-Default',
       trafficTypeName: 'user',
-      key: event.body.visitorId,
-      timestamp: new Date(event.timestamp).getTime(),
+      key: payload.body.visitorId,
+      timestamp: new Date(payload.body.timestamp).getTime(),
       // value: event.properties.total,
-      properties: event.body.properties
+      properties: payload.body.properties
     };
     console.log(splitEvent);
     const res = await fetch(url.toString(), {
