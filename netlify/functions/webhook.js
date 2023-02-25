@@ -20,15 +20,15 @@ const handler = async (event) => {
     console.log(splitEvent);
     const res = await fetch(url.toString(), {
       body: JSON.stringify(splitEvent),
-      headers: new Headers({
+      headers: {
         Authorization: 'Bearer robnevfsd5lrn9maicfmp4ipkb5s2lt459i6',
         'Content-Type': 'application/json'
-      }),
+      },
       method: 'post'
     });
-    console.log(res);
-    return await res.text();
-    console.log(res.text());
+    console.log(res.json);
+    // return await res.text();
+    // console.log(res.text());
     // body: JSON.stringify({ message: `Hello ${subject}` }),
     // // more keys you can return:
     // headers: { "headerName": "headerValue", ... },
