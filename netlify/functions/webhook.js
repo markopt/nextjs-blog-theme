@@ -26,7 +26,9 @@ const handler = async (event) => {
       }),
       method: 'post'
     });
+    console.log(res);
     return await res.text();
+    console.log(res.text());
     // body: JSON.stringify({ message: `Hello ${subject}` }),
     // // more keys you can return:
     // headers: { "headerName": "headerValue", ... },
