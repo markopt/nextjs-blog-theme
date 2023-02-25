@@ -28,8 +28,9 @@ const handler = async (event) => {
       },
       method: 'POST'
     });
+    // console.log(res.json);
+    let response = await res.json();
     console.log(res.json);
-    // return await res.text();
     // console.log(res.text());
     // body: JSON.stringify({ message: `Hello ${subject}` }),
     // // more keys you can return:
