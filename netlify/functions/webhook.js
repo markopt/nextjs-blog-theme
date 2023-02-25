@@ -8,7 +8,7 @@ const handler = async (event) => {
       const url = new URL(endpoint);
       url.searchParams.set('ts', event.timestamp);
       const splitEvent = {
-        eventTypeId: event.body.event,
+        eventTypeId: event.body.accountId,
         environmentName: 'Prod-Default',
         trafficTypeName: 'user',
         key: event.body.visitorId,
