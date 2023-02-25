@@ -7,15 +7,15 @@ const handler = async (event) => {
     // statusCode: 200,
     const endpoint = 'https://events.split.io/api/events';
     const url = new URL(endpoint);
-    url.searchParams.set('ts', payload.body.timestamp);
+    url.searchParams.set('ts', payload.timestamp);
     const splitEvent = {
-      eventTypeId: payload.body.accountId,
+      eventTypeId: payload.accountId,
       environmentName: 'Prod-Default',
       trafficTypeName: 'user',
-      key: payload.body.visitorId,
-      timestamp: new Date(payload.body.timestamp).getTime(),
+      key: payload.visitorId,
+      timestamp: new Date(payload.timestamp).getTime(),
       // value: event.properties.total,
-      properties: payload.body.properties
+      properties: payload.properties
     };
     console.log(splitEvent);
     const res = await fetch(url.toString(), {
