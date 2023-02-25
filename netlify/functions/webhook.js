@@ -21,17 +21,29 @@ const handler = async (event) => {
     };
     console.log(splitEvent);
     console.log(JSON.stringify(splitEvent));
-    response = await fetch(url.toString(), {
-      body: JSON.stringify(splitEvent),
+    const options = {
+      method: 'POST',
       headers: {
-        'Authorization': 'Bearer robnevfsd5lrn9maicfmp4ipkb5s2lt459i6',
-        'Content-Type': 'application/json'
+          'Content-Type': 'application/json;',
+          'Authorization': 'Bearer robnevfsd5lrn9maicfmp4ipkb5s2lt459i6'
       },
-      method: 'POST'
-    });
+      body: JSON.stringify(splitEvent)
+    }
+    fetch(endpoint, options)
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .error(e => console.error(e))
+    // let response = await fetch(url.toString(), {
+    //   body: JSON.stringify(splitEvent),
+    //   headers: {
+    //     'Authorization': 'Bearer robnevfsd5lrn9maicfmp4ipkb5s2lt459i6',
+    //     'Content-Type': 'application/json'
+    //   },
+    //   method: 'POST'
+    // });
     // console.log(res.json);
     // let response = await res.json();
-    console.log(response.json);
+    // console.log(response.json);
     // console.log(res.text());
     // body: JSON.stringify({ message: `Hello ${subject}` }),
     // // more keys you can return:
