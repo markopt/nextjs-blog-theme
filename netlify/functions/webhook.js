@@ -33,7 +33,7 @@ const handler = async (event) => {
     return fetch(endpoint, options)
       .then(res => res.json())
       .then(data => console.log(data))
-      .error(e => console.error(e))
+      .catch(e => console.log(e))
     // let response = await fetch(url.toString(), {
     //   body: JSON.stringify(splitEvent),
     //   headers: {
