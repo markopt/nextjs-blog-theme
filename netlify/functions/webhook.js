@@ -1,5 +1,6 @@
 // Docs on event and context https://docs.netlify.com/functions/build/#code-your-function-2
 const handler = async (event) => {
+  let response
   try {
     console.log(event.body);
     const payload = JSON.parse(event.body);
@@ -20,7 +21,7 @@ const handler = async (event) => {
     };
     console.log(splitEvent);
     console.log(JSON.stringify(splitEvent));
-    const res = await fetch(url.toString(), {
+    response = await fetch(url.toString(), {
       body: JSON.stringify(splitEvent),
       headers: {
         'Authorization': 'Bearer robnevfsd5lrn9maicfmp4ipkb5s2lt459i6',
@@ -29,8 +30,8 @@ const handler = async (event) => {
       method: 'POST'
     });
     // console.log(res.json);
-    let response = await res.json();
-    console.log(res.json);
+    // let response = await res.json();
+    console.log(response.json);
     // console.log(res.text());
     // body: JSON.stringify({ message: `Hello ${subject}` }),
     // // more keys you can return:
