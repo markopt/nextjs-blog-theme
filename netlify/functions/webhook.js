@@ -19,13 +19,14 @@ const handler = async (event) => {
       properties: payload.properties
     };
     console.log(splitEvent);
+    console.log(JSON.stringify(splitEvent));
     const res = await fetch(url.toString(), {
       body: JSON.stringify(splitEvent),
       headers: {
-        Authorization: 'Bearer robnevfsd5lrn9maicfmp4ipkb5s2lt459i6',
+        'Authorization': 'Bearer robnevfsd5lrn9maicfmp4ipkb5s2lt459i6',
         'Content-Type': 'application/json'
       },
-      method: 'post'
+      method: 'POST'
     });
     console.log(res.json);
     // return await res.text();
