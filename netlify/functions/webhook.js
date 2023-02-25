@@ -30,7 +30,7 @@ const handler = async (event) => {
       },
       body: JSON.stringify(splitEvent)
     }
-    fetch(endpoint, options)
+    return fetch(endpoint, options)
       .then(res => res.json())
       .then(data => console.log(data))
       .error(e => console.error(e))
