@@ -1,4 +1,5 @@
 const fetch = require("node-fetch");
+const axios = require("axios");
 // Docs on event and context https://docs.netlify.com/functions/build/#code-your-function-2
 const handler = async (event) => {
   let response
@@ -22,18 +23,30 @@ const handler = async (event) => {
     };
     console.log(splitEvent);
     console.log(JSON.stringify(splitEvent));
-    const options = {
+    // const options = {
+    //   method: 'POST',
+    //   headers: {
+    //       'Content-Type': 'application/json;',
+    //       'Authorization': 'Bearer robnevfsd5lrn9maicfmp4ipkb5s2lt459i6'
+    //   },
+    //   body: JSON.stringify(splitEvent)
+    // }
+
+    const response = await axios({
       method: 'POST',
+      url: endpoint,
+      data: splitEvent,
       headers: {
-          'Content-Type': 'application/json;',
-          'Authorization': 'Bearer robnevfsd5lrn9maicfmp4ipkb5s2lt459i6'
-      },
-      body: JSON.stringify(splitEvent)
-    }
-    fetch(endpoint, options)
-      .then(res => console.log(res))
-      .then(data => console.log(data))
-      .catch(e => console.log(e))
+        'Content-Type': 'application/json;',
+        'Authorization': 'Bearer robnevfsd5lrn9maicfmp4ipkb5s2lt459i6'
+      }
+    )};
+    console.log(response);
+
+    // fetch(endpoint, options)
+    //   .then(res => console.log(res))
+    //   .then(data => console.log(data))
+    //   .catch(e => console.log(e))
     // let response = await fetch(url.toString(), {
     //   body: JSON.stringify(splitEvent),
     //   headers: {
@@ -51,6 +64,7 @@ const handler = async (event) => {
     // headers: { "headerName": "headerValue", ... },
     // isBase64Encoded: true,
   } catch (error) {
+    console.log(error.toString());
     return { statusCode: 500, body: error.toString() }
   }
 }
