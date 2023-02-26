@@ -40,7 +40,7 @@ const handler = async (event) => {
         'Content-Type': 'application/json;',
         'Authorization': 'Bearer robnevfsd5lrn9maicfmp4ipkb5s2lt459i6'
       }
-    )};
+    });
     console.log(response);
 
     // fetch(endpoint, options)
