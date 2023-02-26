@@ -31,7 +31,7 @@ const handler = async (event) => {
       body: JSON.stringify(splitEvent)
     }
     fetch(endpoint, options)
-      .then(res => res.json())
+      .then(res => console.log(res))
       .then(data => console.log(data))
       .catch(e => console.log(e))
     // let response = await fetch(url.toString(), {
