@@ -30,7 +30,7 @@ const handler = async (event) => {
       },
       body: JSON.stringify(splitEvent)
     }
-    return fetch(endpoint, options)
+    fetch(endpoint, options)
       .then(res => res.json())
       .then(data => console.log(data))
       .catch(e => console.log(e))
@@ -40,7 +40,7 @@ const handler = async (event) => {
     //     'Authorization': 'Bearer robnevfsd5lrn9maicfmp4ipkb5s2lt459i6',
     //     'Content-Type': 'application/json'
     //   },
-    //   method: 'POST'
+    //   method: 'POST' 
     // });
     // console.log(res.json);
     // let response = await res.json();
