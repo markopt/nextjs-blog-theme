@@ -19,7 +19,7 @@ const handler = async (event) => {
       key: payload.visitorId,
       timestamp: new Date(payload.timestamp).getTime(),
       // value: event.properties.total,
-      properties: payload.properties
+      properties: payload?.properties?.eventProperties
     };
     console.log(splitEvent);
     console.log(JSON.stringify(splitEvent));
