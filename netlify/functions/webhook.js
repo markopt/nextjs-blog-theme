@@ -41,6 +41,7 @@ const handler = async (event) => {
         'Authorization': 'Bearer robnevfsd5lrn9maicfmp4ipkb5s2lt459i6'
       }
     });
+    console.log("Axios call succeeded");
     return {
       statusCode: 200,
       body: JSON.stringify({ message: "Hello World" }),
