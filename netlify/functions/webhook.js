@@ -32,7 +32,7 @@ const handler = async (event) => {
     //   body: JSON.stringify(splitEvent)
     // }
 
-    const response = await axios({
+    const {status} = await axios({
       method: 'POST',
       url: endpoint,
       data: splitEvent,
@@ -41,7 +41,8 @@ const handler = async (event) => {
         'Authorization': 'Bearer robnevfsd5lrn9maicfmp4ipkb5s2lt459i6'
       }
     });
-    console.log(response);
+    if (status === 202) return {status}
+    console.log(response.status);
 
     // fetch(endpoint, options)
     //   .then(res => console.log(res))
