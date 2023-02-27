@@ -60,6 +60,7 @@ const ThemeSwitcher = () => {
             plan: "Pro Annual",
             accountType: "Facebook"
           });
+          pendo.flushNow();
         }}
         className="flex items-center h-full pr-2 dark:bg-primary rounded-3xl flex justify-center align-center p-2 w-24 h-10 transition"
       >
