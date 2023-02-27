@@ -41,8 +41,10 @@ const handler = async (event) => {
         'Authorization': 'Bearer robnevfsd5lrn9maicfmp4ipkb5s2lt459i6'
       }
     });
-    if (status === 202) return {status}
-    console.log(response.status);
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ message: "Hello World" }),
+    };
 
     // fetch(endpoint, options)
     //   .then(res => console.log(res))
