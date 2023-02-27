@@ -56,6 +56,10 @@ const ThemeSwitcher = () => {
         onClick={() => {
           document.documentElement.classList.add('dark');
           localStorage.setItem('theme', 'dark');
+          pendo.track("toggle_selected", {
+            plan: "Pro Annual",
+            accountType: "Facebook"
+          });
         }}
         className="flex items-center h-full pr-2 dark:bg-primary rounded-3xl flex justify-center align-center p-2 w-24 h-10 transition"
       >

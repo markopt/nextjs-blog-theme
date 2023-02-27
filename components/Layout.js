@@ -34,19 +34,9 @@ export default function Layout({ children }) {
       if (e.matches) {
         document.documentElement.classList.add('dark');
         localStorage.setItem('theme', 'dark');
-        pendo.track("Dark Theme Selected", {
-          accountType: "Facebook",
-          width: JSON.stringify(window.innerWidth),
-          height: JSON.stringify(window.innerHeight)
-        });
       } else {
         document.documentElement.classList.remove('dark');
         localStorage.setItem('theme', 'light');
-        pendo.track("Light Theme Selected", {
-          accountType: "Facebook",
-          width: JSON.stringify(window.innerWidth),
-          height: JSON.stringify(window.innerHeight)
-        });
       }
     };
   };
